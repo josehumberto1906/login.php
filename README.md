@@ -17,8 +17,8 @@ Projeto simples de autenticação de usuário desenvolvido para estudo de progra
 
 ## Estrutura do projeto
 
-index.php → página de login  
-login.php → validação do usuário  
+index.php → página de login
+login.php → validação do usuário
 principal.php → página principal após login
 
 ## Objetivo do projeto
@@ -27,6 +27,6 @@ Projeto criado para praticar conceitos básicos de desenvolvimento web utilizand
 
 ## Autor
 
-José Humberto  
+José Humberto
 Estudante de Sistemas de Informação
 

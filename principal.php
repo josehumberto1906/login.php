@@ -1,8 +1,9 @@
 <?php
-session_start();
+include ("valida.php");
 
-echo 'ola fulano';
-echo '<br>';
+echo 'ola ' . $_SESSION['nome'] . ' seja bem vindo';
+
 
 ?>
-<a href="index.php">Voltar</a>
+<hr>
+<a href="sair.php">Voltar</a>
