@@ -3,7 +3,7 @@ include("valida.php");
 ?>
 
 <html>
-    <title>Página Principal</title>
+    <title>Cadastrar Usuário</title>
     <head>
 
     </head>
@@ -32,8 +32,13 @@ include("valida.php");
             </div>
 
             <div style="background-color: #ddd; min-height: 500px; width:80%; float:left;">
-                <h2>Menu</h2>
-                Conteúdo principal
+                <h2>Cadastrar Usuário</h2>
+                <form method="post" action="inserirUsuario.php">
+                    CPF: <input type="text" name="cpf"><br>
+                    Nome: <input type="text" name="nome"><br>
+                    Senha: <input type="text" name="senha"><br>
+                    <input type="submit" value="Inserir">
+                </form>
             </div>
 
         </div>

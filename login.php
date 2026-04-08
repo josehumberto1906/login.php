@@ -13,7 +13,6 @@ if($senha == ''){
     die('Informe a senha');
 }
 
-// DEBUG: Mostra os valores para verificar
 echo "CPF digitado: " . htmlspecialchars($cpf) . "<br>";
 echo "Senha digitada: " . htmlspecialchars($senha) . "<br>";
 
