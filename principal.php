@@ -28,6 +28,7 @@ include("valida.php");
 
             <div style="background-color: #f4f4f4; min-height: 500px; width:20%; float:left;">
                 <h2>Menu</h2>
+                
                 <a href="cadastrarUsuario.php">Cadastrar Usuário</a>
             </div>
 
