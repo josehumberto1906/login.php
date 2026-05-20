@@ -26,7 +26,7 @@ include("valida.php");
             <h2>Menu</h2>
 
             <a href="cadastrarUsuario.php">Cadastrar Usuário</a><br>
-            <a href="paginalPrincipal.php">Página Principal</a><br>
+            <a href="Principal.php">Página Principal</a><br>
         </div>
 
         <div style="background-color: #ddd; min-height: 500px; width:80%; float:left;">
