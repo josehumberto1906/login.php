@@ -1,98 +1,235 @@
 # Sistema de Login PHP
 
-Um sistema simples de autenticação de usuários desenvolvido em PHP com MySQL, incluindo interface responsiva e validação de dados.
+Sistema de autenticação desenvolvido em PHP com MySQL, utilizando sessões, validação de dados, interface responsiva e estrutura organizada em pastas.
 
-## 🚀 Funcionalidades Implementadas
+## 🚀 Funcionalidades
 
-- **Login seguro**: Autenticação via CPF e senha usando prepared statements (proteção contra SQL Injection)
-- **Sessão de usuário**: Controle de sessão para manter usuário logado
-- **Interface moderna**: Layout responsivo com CSS, incluindo card de login e imagem no topo
-- **Validação de entrada**: Verificação de campos obrigatórios e tratamento de erros
-- **Redirecionamento**: Após login, redireciona para página principal; logout volta ao início
-- **Banco de dados**: Conexão MySQL com tabela `usuarios` (cpf, senha, nome)
-
-## 🛠️ Tecnologias Utilizadas
-
-- **PHP 7+**: Lógica backend e manipulação de sessões
-- **MySQL**: Banco de dados para armazenamento de usuários
-- **HTML5/CSS3**: Estrutura e estilização da interface
-- **XAMPP**: Ambiente de desenvolvimento local
-- **Git/GitHub**: Controle de versão e hospedagem do código
-
-## 📁 Estrutura do Projeto
-
-```
-jose/
-├── index.php          # Página de login com formulário
-├── login.php          # Processamento do login e validação
-├── principal.php      # Página após login (painel do usuário)
-├── valida.php         # Validação de sessão
-├── sair.php           # Logout (destrói sessão)
-├── conexao.php        # Conexão com banco MySQL
-├── imagens/           # Pasta para imagens (ex: ícone de login)
-└── README.md          # Este arquivo
-```
-
-## 🔧 Instalação e Configuração
-
-### 1. Pré-requisitos
-- XAMPP instalado (Apache + MySQL + PHP)
-- Navegador web
-
-### 2. Configuração do Banco
-1. Inicie o XAMPP (Apache e MySQL)
-2. Acesse `http://localhost/phpmyadmin`
-3. Crie banco de dados: `banco`
-4. Execute esta query para criar a tabela:
-
-```sql
-CREATE TABLE usuarios (
-    cpf VARCHAR(20) PRIMARY KEY,
-    senha VARCHAR(255) NOT NULL,
-    nome VARCHAR(100) NOT NULL
-);
-```
-
-5. Insira um usuário de teste:
-```sql
-INSERT INTO usuarios (cpf, senha, nome) VALUES ('123', '456', 'Teste');
-```
-
-### 3. Configuração do Projeto
-1. Clone ou baixe o projeto para `C:\xampp\htdocs\jose`
-2. Verifique se `conexao.php` tem as credenciais corretas (padrão: root, sem senha)
-
-### 4. Executar
-- Acesse: `http://localhost/jose`
-- Faça login com CPF: `123`, Senha: `456`
-
-## 🎨 Layout e Design
-
-- **Página de login**: Card centralizado com gradiente azul, campos de entrada estilizados
-- **Imagem no topo**: Ícone de login (pode ser personalizado em `imagens/login.png`)
-- **Responsivo**: Funciona em desktop e mobile
-- **Cores**: Azul gradiente (#4C7CFF) com branco e cinzas
-
-## 🔒 Segurança
-
-- Prepared statements para prevenir SQL Injection
-- Validação de entrada (campos obrigatórios)
-- Sessões seguras para controle de acesso
-- Senhas armazenadas em texto plano (para desenvolvimento; em produção, use hash como password_hash())
-
-## 📝 Próximos Passos Sugeridos
-
-- Implementar hash de senha (bcrypt)
-- Adicionar registro de novos usuários
-- Validação de CPF real
-- Melhorar tratamento de erros
-- Adicionar mais páginas (dashboard, perfil, etc.)
-
-## 🤝 Contribuição
-
-Projeto desenvolvido para fins educacionais. Sinta-se à vontade para contribuir com melhorias!
+* 🔐 Login seguro com CPF e senha
+* 🛡️ Proteção contra SQL Injection utilizando Prepared Statements
+* 👤 Controle de sessão de usuário
+* 📱 Interface responsiva
+* 📂 Estrutura organizada em pastas
+* 🗄️ Integração com banco de dados MySQL
+* ✅ Validação de formulários
+* 🚪 Logout seguro
+* 🎨 Layout moderno utilizando HTML, CSS e Bootstrap
+* ⚡ Sistema preparado para futuras expansões
 
 ---
 
-**Desenvolvido por José Humberto** | [GitHub](https://github.com/josehumberto1906/login.php)
+# 🛠️ Tecnologias Utilizadas
 
+* PHP
+* MySQL
+* HTML5
+* CSS3
+* Bootstrap
+* JavaScript
+* XAMPP
+
+---
+
+# 📁 Estrutura de Pastas
+
+```bash
+login.php/
+│
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── img/
+│
+├── config/
+│   └── conexao.php
+│
+├── includes/
+│   ├── header.php
+│   ├── footer.php
+│   └── menu.php
+│
+├── pages/
+│   ├── dashboard.php
+│   ├── login.php
+│   ├── logout.php
+│   └── cadastro.php
+│
+├── database/
+│   └── banco.sql
+│
+├── index.php
+├── README.md
+└── .gitignore
+```
+
+> A estrutura acima pode variar conforme as últimas atualizações do projeto.
+
+---
+
+# ⚙️ Configuração do Projeto
+
+## 1️⃣ Clonar o repositório
+
+```bash
+git clone https://github.com/josehumberto1906/login.php
+```
+
+---
+
+## 2️⃣ Mover para a pasta do servidor
+
+Se estiver utilizando o XAMPP:
+
+```bash
+C:/xampp/htdocs/
+```
+
+---
+
+## 3️⃣ Criar o banco de dados
+
+Abra o phpMyAdmin e execute:
+
+```sql
+CREATE DATABASE banco;
+```
+
+Depois importe o arquivo:
+
+```bash
+database/banco.sql
+```
+
+---
+
+## 4️⃣ Configurar conexão
+
+Arquivo:
+
+```bash
+config/conexao.php
+```
+
+Exemplo:
+
+```php
+<?php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "banco";
+
+$conn = new mysqli($host, $user, $password, $database);
+?>
+```
+
+---
+
+# ▶️ Como Executar
+
+Inicie o Apache e MySQL no XAMPP.
+
+Depois abra no navegador:
+
+```bash
+http://localhost/login.php
+```
+
+---
+
+# 🔐 Segurança Implementada
+
+* Prepared Statements
+* Validação de entradas
+* Controle de sessão
+* Logout seguro
+* Proteção básica contra SQL Injection
+
+---
+
+# 📌 Atualizações Recentes
+
+## ✅ Melhorias Implementadas
+
+* Organização do projeto em pastas
+* Melhorias no sistema de autenticação
+* Correções de conexão com banco de dados
+* Ajustes em formulários
+* Melhorias na interface responsiva
+* Implementação de sessões
+* Correção de erros relacionados ao MySQL
+* Padronização de arquivos PHP
+* Melhor estrutura para manutenção futura
+
+---
+
+# 📷 Telas do Sistema
+
+## 🔑 Tela de Login
+
+Adicione uma imagem da tela aqui:
+
+```md
+![Login](assets/img/login.png)
+```
+
+---
+
+## 🏠 Dashboard
+
+```md
+![Dashboard](assets/img/dashboard.png)
+```
+
+---
+
+# 📚 Aprendizados
+
+Este projeto foi desenvolvido para praticar:
+
+* PHP
+* Banco de Dados MySQL
+* Autenticação de usuários
+* Sessões em PHP
+* Organização de projetos
+* Segurança básica em aplicações web
+
+---
+
+# 🔮 Melhorias Futuras
+
+* Cadastro de usuários
+* Recuperação de senha
+* Criptografia de senha com password_hash()
+* Painel administrativo
+* Sistema de níveis de acesso
+* API REST
+* Integração com Bootstrap 5
+* Responsividade avançada
+
+---
+
+# 🤝 Contribuição
+
+Contribuições são bem-vindas.
+
+1. Faça um Fork
+2. Crie uma Branch
+3. Commit suas alterações
+4. Push para a Branch
+5. Abra um Pull Request
+
+---
+
+# 👨‍💻 Autor
+
+José Humberto
+
+GitHub:
+
+[josehumberto1906](https://github.com/josehumberto1906?utm_source=chatgpt.com)
+
+---
+
+# ⭐ Projeto Acadêmico
+
+Projeto desenvolvido para estudos e prática de desenvolvimento web utilizando PHP e MySQL.
