@@ -31,7 +31,9 @@ include("valida.php");
         <div style="background-color: #f4f4f4; min-height: 500px; width:20%; float:left;">
             <h2>Menu</h2>
             <a href="principal.php">Página Principal</a><br>
-            <a href="cadastrarUsuario.php">Cadastrar Usuário</a>
+            <a href="cadastrarUsuario.php">Cadastrar Usuário</a><br>
+            <a href="cadastrarGenero.php">Cadastrar Gênero</a>
+
         </div>
 
         <div style="background-color: #ddd; min-height: 500px; width:80%; float:left;">
@@ -65,10 +67,13 @@ include("valida.php");
                     while($row = $result->fetch_assoc()){
                         ?>
                         <tr>
-                            <td><?= $row['cpf']; ?></td>
-                            <td><?= $row['nome']; ?></td>
-                            <td><?= $row['senha']; ?></td>
-                            <td>ALTERAR</td>
+                            <form method="post" action="alterarUsuario.php">
+                                <input type="hidden" name="cpfAnterior" value="<?= $row['cpf']; ?>">
+                                <td><input type="text" value="<?= $row['cpf']; ?>" name="cpf"></td>
+                                <td><input type="text" value="<?= $row['nome']; ?>" name="nome"></td>
+                                <td><input type="text" value="<?= $row['senha']; ?>" name="senha"></td>
+                                <td><input type="submit" value="alterar"></td>
+                            </form>
                             <td><form method="post" action="apagarUsuario.php">
                                 <input type="hidden" value="<?= $row['cpf']; ?>" name="cpf">
                                 <input type="submit" value="APAGAR">
